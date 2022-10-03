@@ -74,6 +74,31 @@ function sayHello() {
 ```
 Dalam contoh ini, kira mengembalikan fungsi-dari fungsi lain, kami dapat mengembalikan fungsi karena fungsi dalam javascript diperlakukan sebagai nilai.
 
+### Higher-order function
+Higher-order function merupakan function yang memiliki function sebagai argument ataupun function sebagai nilai return dari function tersebut. Function yang menjadi argument atau nilai return dari sebuah higher order function disebut callback function. Ada beberapa higher order function seperti array, find, filter dan yang lain sebagainya. Find adalah  sebuah function array yang mengembalikan sebuah nilai yang sudah ditentukan. Contoh penerapan find sendiri adalah sebagai berikut 
+```
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const number = numbers.find(number => number >= 5 
+console.log(number) // menampilkan angka 5
+```
+Contoh script diatas m rayyyenunjukan cara kita mencari sebuah angka yaitu angka 5, angka 5 dari array  numbers yang berisi angka dari 1 - 10. Nilai dari hasil pencarian tersebut nantinya di assign ke konstanta number dan kemudian ditampilkan menggunakan console.log. Kemudian setelah find ada yang nama nya filter. Filter adalah contoh lain dari higher order function. Filter akan memilah nilai yang ditentukan lalu dikembalikan menjadi sebuah array yang baru. Contoh penerapan filter sendiri adalah sebagai berikut
+```
+const numbers = [1, 23, 21, 51, 43, 2, 54, 34]
+const newNumbers = numbers.filter((number) => number > 40)
+console.log(newNumbers) // [ 51, 43, 54 ]
+```
+Array Number berisi nilai acak. Dalam contoh ini, disini kita ingin mencari nilai lebih dari    sama dengan 40 dari array numbers. Hasil pencarian tersebut akan menghasilkan nilai array yang baru newNumbers yang berisikan [51, 43, 54].
+
+### Execution Contex
+*Execution context* merupakan konteks atau lingkungan dimana javascript di eksekusi. *Execution Context* merupakan pembungkus yang mengelola kode yang sedang di run atau dijalankan. Execution context terbagi 2 yaitu *Global Execution Context* dan *Local Execution Context*. Kemudian di dalam javaScript ada 2 phase pada saat Execution Context yaitu *Creation phase* dan *execution phases*
+
+### Execution Stack
+Execution Stack dikenal dengan call stack , melacak semua Execution context yang dibuat selama siklus script. JavaScript merupakan bahasa utas tunggal, yang berarti bahwa ia hanya mampu menjalankan satu tugas pada satu waktu. Jadi, ketika tindakan, fungsi, dan peristiwa lain terjadi, Execution context  dibuat untuk masing-masing event. Karena sifat JavaScript single-threaded,tumpukan stack eksekusi  yang akan dieksekusi yang dikenal sebagai Execution Stack.
+Saat skrip dimuat di browser, konteks global dibuat sebagai konteks default tempat mesin JavaScript mulai mengeksekusi kode dan ditempatkan dibagian bawah Execution Stack.
+
+Engine JavaScript kemudian mencari panggilan fungsi dalam kode. Setiap panggilan fungsi, FEC baru dibuat untuk fungsi itu dan kemudian ditempatkan diatas execution context yang dijalankan.
+Execution context  di bagian atas Execution Stack menjadi execution context aktif selesai, engine JavaScript mengeluarkan fungsi execution context tertentu dari execution stack, kemudian bergerak ke arah berikutnya di bawah nya dan seterusnya. ###
+
 
 
 * Docker dekstop ([Download Here](https://docs.docker.com/desktop/windows/install/))
