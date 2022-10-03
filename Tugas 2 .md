@@ -11,8 +11,17 @@ Berikut dicontohkan untuk contoh dari closure
 Kegunaan Closure sendiri yaitu, pertama membuat sebuah fungsi yang dinamis, kita bisa menyusun atau merancang komposisi fungsi beserta kode dapat digunakan berulang kali (reusable). Kedua closure berguna untuk bisa menyimpan data dalam lingkup terpisah dan memanggilnya ketika diperlukan. 
 
 
-# Cara menjalankan Cotainer (Windows)
-Untuk menjalankan container ada beberapa prerequisite: Install 2 software dibawah ini.
+### Immediately Invoked Function Expression
+Immediately Invoked Function Expression yang disingkat IIFE adalah bentuk function yang dideklarasikan. 
+```
+(function () {
+    console.log('Hello World');
+})();
+```
+IIFE sering ditemui pada pemrograman JavaScript di browser terutama jika kita menggunakan plugin seperti di JQuery.
+
+Ketika sebuah function dideklarasikan, function tersebut akan ditambahkan ke window object. 
+
 * Docker dekstop ([Download Here](https://docs.docker.com/desktop/windows/install/))
 * VcXsrv Windows X server ([Download Here](https://sourceforge.net/projects/vcxsrv/))
 
