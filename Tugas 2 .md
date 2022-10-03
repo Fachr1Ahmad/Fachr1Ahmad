@@ -102,7 +102,7 @@ Execution context  di bagian atas Execution Stack menjadi execution context akti
 ### Event Loop
 Event Loop merupakan proses yang hanya memiliki 1 thread dengan banyak loop proses yang tidak terhingga atau unlimited. Pada cara ini kita hanya melakukan satu tugas yang mana selanjutnya menghandle banyak regu kita melakukan seleksi prioritas terhadap tugas yang dilakukan atau dikerjakan. Hal ini dilakukan untuk bisa membuat proses ini menjadi aman terhadap tumpang tindih satu proses lainya. Untuk beberapa event loop ini memberikan kinerja yang lebih bagus dibandingkan konkurensi karena tidak ada blok yang terjadi. 
 Untuk beberapa kasus event loop ini memberikan kinerja yang lebih bagus dibandingkan konkurensi karena tidak ada blok yang terjadi. 
-[![IMAGE ALT TEXT HERE](https://miro.medium.com/max/1100/1*yX52mSzTZXkIK_qRxxoFvg.png)]
+![IMAGE ALT TEXT HERE](https://miro.medium.com/max/1100/1*yX52mSzTZXkIK_qRxxoFvg.png)
 
 * Docker dekstop ([Download Here](https://docs.docker.com/desktop/windows/install/))
 * VcXsrv Windows X server ([Download Here](https://sourceforge.net/projects/vcxsrv/))
