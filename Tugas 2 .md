@@ -3,8 +3,13 @@
 ### NIM  : 120140124
 ### Kelas: RB PAM
 
-# Deskripsi Program
-Stacking Bloks merupakan sebuah aplikasi game yang mana berupa permainan yang dimainkan dengan cara menyusun balok. Kita dituntut untuk menyusun balok-balok dalam sebuah grid yang mana balok-balok tersebut akan habis atau menghilang ketika satu baris grid terpenuhi. Stacking Bloks dijalankan dengan bahasa pemrograman python yang mana untuk menjalankannya kita menggunakan library py.game. Py.game sendiri merupakan sebuah modul gratis yang digunakan dalam pengembangan sebuah game menggunakan bahasa python.
+# Rangkuman
+### Closure
+Closure merupakan sebuah fungsi yang dieksekusi oleh fungsi lainnya(nested functions) yang membuat fungsi tersebut dapat mengakses/merekam variabel di dalam lexical scope pada fungsi induk (parent function). Closure dibuat ketika ada fungsi yang mengembalikan nilai fungsi lainnya. Fungsi lainnya memiliki akses ke variabel yang dideklarasikan di luar parent function. 
+Berikut dicontohkan untuk contoh dari closure 
+
+Kegunaan Closure sendiri yaitu, pertama membuat sebuah fungsi yang dinamis, kita bisa menyusun atau merancang komposisi fungsi beserta kode dapat digunakan berulang kali (reusable). Kedua closure berguna untuk bisa menyimpan data dalam lingkup terpisah dan memanggilnya ketika diperlukan. 
+
 
 # Cara menjalankan Cotainer (Windows)
 Untuk menjalankan container ada beberapa prerequisite: Install 2 software dibawah ini.
