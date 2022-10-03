@@ -10,7 +10,16 @@ Berikut dicontohkan untuk contoh dari closure
 
 Kegunaan Closure sendiri yaitu, pertama membuat sebuah fungsi yang dinamis, kita bisa menyusun atau merancang komposisi fungsi beserta kode dapat digunakan berulang kali (reusable). Kedua closure berguna untuk bisa menyimpan data dalam lingkup terpisah dan memanggilnya ketika diperlukan. 
 
-
+Dibawah ini saya lampirkan contoh dari closure sebagai berikut
+```
+function Motor() {
+    var merk = "Honda";
+    return function() {
+        return merk + "Supra";
+    }
+}
+console.dir(Motor());
+```
 ## Immediately Invoked Function Expression
 Immediately Invoked Function Expression yang disingkat IIFE adalah bentuk function yang dideklarasikan. 
 ```
