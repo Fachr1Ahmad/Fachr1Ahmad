@@ -4,14 +4,14 @@
 ### Kelas: RB PAM
 
 # Rangkuman
-### Closure
+## Closure
 Closure merupakan sebuah fungsi yang dieksekusi oleh fungsi lainnya(nested functions) yang membuat fungsi tersebut dapat mengakses/merekam variabel di dalam lexical scope pada fungsi induk (parent function). Closure dibuat ketika ada fungsi yang mengembalikan nilai fungsi lainnya. Fungsi lainnya memiliki akses ke variabel yang dideklarasikan di luar parent function. 
 Berikut dicontohkan untuk contoh dari closure 
 
 Kegunaan Closure sendiri yaitu, pertama membuat sebuah fungsi yang dinamis, kita bisa menyusun atau merancang komposisi fungsi beserta kode dapat digunakan berulang kali (reusable). Kedua closure berguna untuk bisa menyimpan data dalam lingkup terpisah dan memanggilnya ketika diperlukan. 
 
 
-### Immediately Invoked Function Expression
+## Immediately Invoked Function Expression
 Immediately Invoked Function Expression yang disingkat IIFE adalah bentuk function yang dideklarasikan. 
 ```
 (function () {
@@ -37,7 +37,7 @@ console.log(windows.word);
 ```
 Hal ini tidak akan terlalu menjadi masalah jika nama function dan variabel tersebut berbeda. Akan tetapi seiring berjalannya waktu baris code pada sebuah proyek JavaScript bisa menjadi berubah sangat panjang dan komplek, kita akan sulit untuk mengingat setiap nama dari function dan variabel yang telah dideklarasikan. Sehingga sangat mungkin terjadi kita memberi satu nama yang sama untuk dua function berbeda. Oleh karenanya IIFE memiliki tujuan untuk menghindari Global NameSpace Pollution yang dapat berakibat terjadinya name collisions, yaitu terjadinya tabrakan antara nama function satu dengan function lai ataupun nama function dengan nama variabel.
 
-### First-Class Function
+## First-Class Function
 Sebuah Objek disebut atau bisa dikatakan First-Class Function apabila dipenuhi berbagai syarat sebagai berikut, Pertama yaitu mendukung anonymous function atau function yang tidak memiliki definisi nama. Kedua mendukung pengiriman function sebagai argumen dari function lain. Ketiga function sebagai nilai kembalian dari function lain, Kemudian menyimpan function sebagai variabel atau dalam struktur data lainnya.
 Berikut adalah contoh kode penerapan first class function pada javascript
 * Menetapkan fungsi ke variabel
@@ -74,7 +74,7 @@ function sayHello() {
 ```
 Dalam contoh ini, kira mengembalikan fungsi-dari fungsi lain, kami dapat mengembalikan fungsi karena fungsi dalam javascript diperlakukan sebagai nilai.
 
-### Higher-order function
+## Higher-order function
 Higher-order function merupakan function yang memiliki function sebagai argument ataupun function sebagai nilai return dari function tersebut. Function yang menjadi argument atau nilai return dari sebuah higher order function disebut callback function. Ada beberapa higher order function seperti array, find, filter dan yang lain sebagainya. Find adalah  sebuah function array yang mengembalikan sebuah nilai yang sudah ditentukan. Contoh penerapan find sendiri adalah sebagai berikut 
 ```
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -89,17 +89,17 @@ console.log(newNumbers) // [ 51, 43, 54 ]
 ```
 Array Number berisi nilai acak. Dalam contoh ini, disini kita ingin mencari nilai lebih dari    sama dengan 40 dari array numbers. Hasil pencarian tersebut akan menghasilkan nilai array yang baru newNumbers yang berisikan [51, 43, 54].
 
-### Execution Contex
+## Execution Contex
 *Execution context* merupakan konteks atau lingkungan dimana javascript di eksekusi. *Execution Context* merupakan pembungkus yang mengelola kode yang sedang di run atau dijalankan. Execution context terbagi 2 yaitu *Global Execution Context* dan *Local Execution Context*. Kemudian di dalam javaScript ada 2 phase pada saat Execution Context yaitu *Creation phase* dan *execution phases*
 
-### Execution Stack
+## Execution Stack
 Execution Stack dikenal dengan call stack , melacak semua Execution context yang dibuat selama siklus script. JavaScript merupakan bahasa utas tunggal, yang berarti bahwa ia hanya mampu menjalankan satu tugas pada satu waktu. Jadi, ketika tindakan, fungsi, dan peristiwa lain terjadi, Execution context  dibuat untuk masing-masing event. Karena sifat JavaScript single-threaded,tumpukan stack eksekusi  yang akan dieksekusi yang dikenal sebagai Execution Stack.
 Saat skrip dimuat di browser, konteks global dibuat sebagai konteks default tempat mesin JavaScript mulai mengeksekusi kode dan ditempatkan dibagian bawah Execution Stack.
 
 Engine JavaScript kemudian mencari panggilan fungsi dalam kode. Setiap panggilan fungsi, FEC baru dibuat untuk fungsi itu dan kemudian ditempatkan diatas execution context yang dijalankan.
 Execution context  di bagian atas Execution Stack menjadi execution context aktif selesai, engine JavaScript mengeluarkan fungsi execution context tertentu dari execution stack, kemudian bergerak ke arah berikutnya di bawah nya dan seterusnya. 
 
-### Event Loop
+## Event Loop
 Event Loop merupakan proses yang hanya memiliki 1 thread dengan banyak loop proses yang tidak terhingga atau unlimited. Pada cara ini kita hanya melakukan satu tugas yang mana selanjutnya menghandle banyak regu kita melakukan seleksi prioritas terhadap tugas yang dilakukan atau dikerjakan. Hal ini dilakukan untuk bisa membuat proses ini menjadi aman terhadap tumpang tindih satu proses lainya. Untuk beberapa event loop ini memberikan kinerja yang lebih bagus dibandingkan konkurensi karena tidak ada blok yang terjadi. 
 Untuk beberapa kasus event loop ini memberikan kinerja yang lebih bagus dibandingkan konkurensi karena tidak ada blok yang terjadi. 
 
@@ -113,13 +113,13 @@ Untuk beberapa kasus event loop ini memberikan kinerja yang lebih bagus dibandin
 Pada awalnya event loop banyak diadopsi oleh teknologi pada javascript. Hampir semua framework yang berhubungan dengan front-end digunakan dengan tujuan optimasi terhadap resource yang dipakai. Node.js atau Nginx adalah pemakai event loop yang dilakukan pada proses ascronousnya.
 
 
-### Callbacks
+## Callbacks
 Callbacks adalah kode yang biasanya berupa fungsi tapi tidak selalu yang didaftarkan ke kode lain yang diharapkan untuk memanggil balik (call back) kode tersebut kemudian waktu.
 Callback merupakan bagian penting dalam event driven system, namun dapat juga digunakan di luar konteks tersebut. 
 Dalam JavaScript untuk client side, semua kode yang tertulis dalam event properties suatu HTML (onload, onchange, onkeydown, onkeyup, dll) yang mana merupakan callback yang akan dipanggil ketika event terkait terjadi.
 Di Luar itu, callback dapat diberikan sebagai argumen terhadap fungsi yang nantinya akan dipanggil oleh fungsi tersebut. Kinerja dari callback sendiri sebenarnya mirip-mirip dengan event driven, namun event event disini tidak tertulis secara eksplisit
 
-### Promise
+## Promise
 Dari katanya promise merupakan sebuah janji, promise sendiri cara kerjanya sama seperti selayaknya kita memiliki janji dengan seseorang. Sebagai contoh ketika kita membuat janji dengan seorang teman untuk belajar bersama. Terdapat beberapa kemungkinan terjadi terhadap janji yang kita buat yaitu kita belum bisa memenuhi janjinya, kita sudah memenuhi janjinya, atau kita tidak bisa memenuhi janji bekerja kelompok. 
 
 Seperti janji, terdapat 3 kemungkinan state yang dapat terjadi didalam promise , antara lain:
@@ -147,7 +147,7 @@ p.then((result) => {
     alert(error)
 })
 ```
-### Async/Await
+## Async/Await
 Async/Await merupakan salah satu fitur baru dari javascript yang digunakan untuk bisa menangani hasil dari sebuah promise. Cara penggunaannya adalah dengan menambahkan kata __asy__ didepan sebuah fungsi untuk mengubahnya menjadi *asynchronous*
 Sedangkan await sendiri berfungsi untuk menunda sebuah kode dijalankan, sampai proses *asynchronous*  berhasil. Dibawah ini akan ditunjukan penggunaan async/await, disini kita akan melihat ada fungsi baru yang akan diubah menjadi *asynchronous*. Di Dalam fungsi tersebut akan dilakukan pemanggilan fungsi *createPost* dan *getPost*. Tambahkan kata kunci await didepan fungsi *createPos*.
 
