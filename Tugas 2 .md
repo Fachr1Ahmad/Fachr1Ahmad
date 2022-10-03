@@ -105,8 +105,10 @@ Untuk beberapa kasus event loop ini memberikan kinerja yang lebih bagus dibandin
 
 # ![IMAGE ALT TEXT HERE](https://miro.medium.com/max/1100/1*yX52mSzTZXkIK_qRxxoFvg.png)
 
-Jika dijelaskan maka secara umum event loop memiliki alur atau proses sebagai berikut,
-
+#### Jika dijelaskan maka secara umum event loop memiliki alur atau proses sebagai berikut,
+1. Event emiter atau sumber dari event akan memasukan task ke antrian event. Task-task ini akan mengantri untuk dilakukanya proses eksekusi pada proses loop selanjutnya.
+2. Event loop akan mengambil task dari event queue dan memprosesnya berdasarkan handler yang ada. Pada proses ini akan diprioritaskan pengerjaan dengan menggunakan algoritma tertentu. Proses yang terjadi yaitu sekuensial satu persatu dan loop akan segera kembali setelah registrasi callback pada handler dari proses.
+3. Jika proses telah usai, event loop akan men-trigger callback dan memberikan informasi proses selesai dan mengirimkan hasil kepada pemanggil proses ini. 
 
 
 
