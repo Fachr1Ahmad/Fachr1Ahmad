@@ -110,28 +110,90 @@ Untuk beberapa kasus event loop ini memberikan kinerja yang lebih bagus dibandin
 2. Event loop akan mengambil task dari event queue dan memprosesnya berdasarkan handler yang ada. Pada proses ini akan diprioritaskan pengerjaan dengan menggunakan algoritma tertentu. Proses yang terjadi yaitu sekuensial satu persatu dan loop akan segera kembali setelah registrasi callback pada handler dari proses.
 3. Jika proses telah usai, event loop akan men-trigger callback dan memberikan informasi proses selesai dan mengirimkan hasil kepada pemanggil proses ini. 
 
+Pada awalnya event loop banyak diadopsi oleh teknologi pada javascript. Hampir semua framework yang berhubungan dengan front-end digunakan dengan tujuan optimasi terhadap resource yang dipakai. Node.js atau Nginx adalah pemakai event loop yang dilakukan pada proses ascronousnya.
 
 
+### Callbacks
+Callbacks adalah kode yang biasanya berupa fungsi tapi tidak selalu yang didaftarkan ke kode lain yang diharapkan untuk memanggil balik (call back) kode tersebut kemudian waktu.
+Callback merupakan bagian penting dalam event driven system, namun dapat juga digunakan di luar konteks tersebut. 
+Dalam JavaScript untuk client side, semua kode yang tertulis dalam event properties suatu HTML (onload, onchange, onkeydown, onkeyup, dll) yang mana merupakan callback yang akan dipanggil ketika event terkait terjadi.
+Di Luar itu, callback dapat diberikan sebagai argumen terhadap fungsi yang nantinya akan dipanggil oleh fungsi tersebut. Kinerja dari callback sendiri sebenarnya mirip-mirip dengan event driven, namun event event disini tidak tertulis secara eksplisit
 
+### Promise
+Dari katanya promise merupakan sebuah janji, promise sendiri cara kerjanya sama seperti selayaknya kita memiliki janji dengan seseorang. Sebagai contoh ketika kita membuat janji dengan seorang teman untuk belajar bersama. Terdapat beberapa kemungkinan terjadi terhadap janji yang kita buat yaitu kita belum bisa memenuhi janjinya, kita sudah memenuhi janjinya, atau kita tidak bisa memenuhi janji bekerja kelompok. 
 
+Seperti janji, terdapat 3 kemungkinan state yang dapat terjadi didalam promise , antara lain:
+* Pending -> Dalam keadaan awal, tidak terpenuhi atau tidak ditolak.
+* Fulfilled -> Terpenuhi atau sukses.
+* Rejected -> Tidak terpenuhi atau gagal.
 
-
-* Docker dekstop ([Download Here](https://docs.docker.com/desktop/windows/install/))
-* VcXsrv Windows X server ([Download Here](https://sourceforge.net/projects/vcxsrv/))
-
-1. Clone repository ini, masuk kedalam direktori 
-2. Jalankan docker desktop, dan lakukan build image pada terminal dengan perintah
+Berikut saya lampirkan untuk contoh penggunaan promise
 ```
-docker build -t main
-```
-3. Sambil menunggu build selesai, selanjutnya setup VcXsrv (X Launcher). Buka aplikasi XLauncher yang sudah diinstall. Pada window awal pilih Multiple Windows dengan display number -1 > next > Start no client > next > centang disable access control > next > finish. Atau juga dapat dilakukan dengan membuka file konfigurasi Xlauncher yang ada di repository ini yaitu file 'Docker.xlaunch'.
-4. Setelah build Selesai jalankan container dengan perintah:
-```
-docker run --rm main
-```
-5. Container sudah berjalan dan game sudah dapat dimainkan
+let promise = "Standup"
 
-# Video Demo Container
-Berikut akan ditampilkan video demo container.
+let p = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        if (janji === "Standup") {
+            resolve("Penonton ketawa")
+        }  else {
+            reject("Anda tidak Standup")
+        }
+    }, 2000)
+})
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HGl9biwuqDI/0.jpg)](https://www.youtube.com/watch?v=HGl9biwuqDI)
+p.then((result) => {
+    alert(result)
+}).catch((error) => {
+    alert(error)
+})
+```
+### Async/Await
+Async/Await merupakan salah satu fitur baru dari javascript yang digunakan untuk bisa menangani hasil dari sebuah promise. Cara penggunaannya adalah dengan menambahkan kata __asy__ didepan sebuah fungsi untuk mengubahnya menjadi *asynchronous*
+Sedangkan await sendiri berfungsi untuk menunda sebuah kode dijalankan, sampai proses *asynchronous*  berhasil. Dibawah ini akan ditunjukan penggunaan async/await, disini kita akan melihat ada fungsi baru yang akan diubah menjadi *asynchronous*. Di Dalam fungsi tersebut akan dilakukan pemanggilan fungsi *createPost* dan *getPost*. Tambahkan kata kunci await didepan fungsi *createPos*.
+
+```
+const posts = [
+    {
+      title: "Post one",
+      body: "This is post one"
+    },
+    {
+      title: "Post two",
+      body: "This is post two"
+    }
+  ]
+  
+  const createPost = post => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        posts.push(post)
+        const error = false
+        if(!error) {
+          resolve()
+        }else{
+          reject()
+        }
+      }, 2000)
+    })
+  }
+  
+  const getPosts = () => {
+    setTimeout(() => {
+      posts.forEach(post => {
+        console.log(post)
+      })
+    }, 1000)
+  }
+  
+  const newPost = {
+    title: "Post three"
+    body: "This is post three"
+  }
+  
+  const init = async() => {
+    await createPost(newPost)
+    getPost()
+  }
+  
+  init()
+```
