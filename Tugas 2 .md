@@ -1,11 +1,7 @@
-# STACKING BLOKS | TUGAS BESAR PBO
-
-# Nama Anggota Kelompok
---- | --- | --- |
-Nama | : Fachri Ahmad |
-NIM | : 120140124 |
-Kelas | : RB PAM |
---- | --- | --- |
+Tugas Individu 2 Pengembangan Aplikasi Mobile
+Nama : Fachri Ahmad
+NIM  : 120140124
+Kelas: RB PAM
 
 # Deskripsi Program
 Stacking Bloks merupakan sebuah aplikasi game yang mana berupa permainan yang dimainkan dengan cara menyusun balok. Kita dituntut untuk menyusun balok-balok dalam sebuah grid yang mana balok-balok tersebut akan habis atau menghilang ketika satu baris grid terpenuhi. Stacking Bloks dijalankan dengan bahasa pemrograman python yang mana untuk menjalankannya kita menggunakan library py.game. Py.game sendiri merupakan sebuah modul gratis yang digunakan dalam pengembangan sebuah game menggunakan bahasa python.
